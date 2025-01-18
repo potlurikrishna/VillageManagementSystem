@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Certificate Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='income_cert.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="form-container">
+        <h2>Income Certificate Application Form</h2>
+        
+        <form action="/submit_income_cert_application" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="aadhar">Aadhar Card No *</label>
+                <input type="text" id="aadhar" name="aadhar" required>
+            </div>
+            <div class="form-group">
+                <label for="student_name">Student Name *</label>
+                <input type="text" id="student_name" name="student_name" required>
+            </div>
+            <div class="form-group">
+                <label for="relation">Relation *</label>
+                <input type="text" id="relation" name="relation" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender *</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="permanent_address">Permanent Address</label>
+                <input type="text" id="door_no" name="door_no" placeholder="Door No" class="address-input" required>
+                <input type="text" id="locality" name="locality" placeholder="Locality/Landmark" class="address-input" required>
+                <input type="text" id="district" name="district" placeholder="District" class="address-input" required>
+                <input type="text" id="mandal" name="mandal" placeholder="Mandal" class="address-input" required>
+                <input type="text" id="village" name="village" placeholder="Village" class="address-input" required>
+                <input type="text" id="pin_code" name="pin_code" placeholder="Pin Code" class="address-input" required>
+            </div>            
+            <div class="form-group">
+                <label for="mobile">Mobile *</label>
+                <input type="text" id="mobile" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="income_on_lands">Income on Lands *</label>
+                <input type="number" id="income_on_lands" name="income_on_lands">
+            </div>
+            <div class="form-group">
+                <label for="income_on_business">Income on Business </label>
+                <input type="number" id="income_on_business" name="income_on_business">
+            </div>
+            <div class="form-group">
+                <label for="total_income">Total Income</label>
+                <input type="number" id="total_income" name="total_income" required>
+            </div>
+            <div class="form-group">
+                <p> <strong>Documents must save with Applicant Name</strong> Check before Uploaded</p>
+                <label for="Aadhar_doc">Upload Aadhar</label>
+                <input type="file" id="Aadhar_doc" name="Aadhar_doc" accept="application/pdf" required>
+            </div>
+            <div class="form-group">
+                <label for="MeeSeva_Application_Form">Upload MeeSeva Application Form </label>
+                <input type="file" id="MeeSeva_Application_Form" name="MeeSeva_Application_Form" accept="application/pdf" required>
+            </div>
+            <button type="submit" class="submit-button">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

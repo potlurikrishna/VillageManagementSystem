@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Village Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %} <!-- Include Navbar -->
+
+    <div class="about-container">
+        <h1>About Village Management System</h1>
+        <p>Welcome to the Village Management System! Our goal is to streamline the management of various aspects of village life to enhance the quality of life for all residents.</p>
+
+        <div class="section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to build a sustainable, well-connected, and prosperous village by managing resources, services, and community engagement effectively. We aim to ensure that every resident has access to essential services, and that the village remains a harmonious and thriving place to live.</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Vision</h2>
+            <p>Our vision is to become a model village where residents have access to modern infrastructure, essential services like healthcare, education, agriculture support, and community well-being programs. We aim to foster a community that works together for a better future.</p>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <p>Our Village Management System is designed to improve the daily lives of residents by offering a variety of features including:</p>
+            <ul>
+                <li>Real-time tracking of village development activities</li>
+                <li>Access to healthcare, educational, and agricultural services</li>
+                <li>Online donations and financial transparency</li>
+                <li>Instant updates on local government schemes and policies</li>
+                <li>Community engagement through complaints and feedback systems</li>
+                <li>Efficient management of resources like water, electricity, and waste</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <p>The Village Management System integrates multiple departments to provide a seamless experience for residents. From applying for certificates to donating to the village fund, everything can be done through a user-friendly interface. Each resident can track the progress of local projects, access essential services, and stay updated on government schemes. The system also allows residents to file complaints, access healthcare services, and more.</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Transparency:</strong> We ensure that all village activities and financial records are transparent and accessible to all.</li>
+                <li><strong>Community:</strong> We believe in fostering a strong sense of community where everyone works together for the common good.</li>
+                <li><strong>Sustainability:</strong> We aim to create solutions that are environmentally friendly, cost-effective, and long-lasting.</li>
+                <li><strong>Inclusivity:</strong> We strive to provide services that cater to the needs of every resident, regardless of background.</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

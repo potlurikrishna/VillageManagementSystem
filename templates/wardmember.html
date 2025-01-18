@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ward Members</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='wardmember.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content">
+        <h1>Ward Members</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ward No</th>
+                    <th>Elected Party</th>
+                    <th>Member Name</th>
+                    <th>Phone Number</th>
+                    <th>Photo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Independent</td>
+                    <td>Potluri Krishna Balamohan</td>
+                    <td>7842469927</td>
+                    <td><img src="{{ url_for('static', filename='ward_member1.jpg') }}" alt="Member Photo" class="photo"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Congress</td>
+                    <td>Shyam Sundar</td>
+                    <td>9123456789</td>
+                    <td><img src="{{ url_for('static', filename='ward_member2.jpg') }}" alt="Member Photo" class="photo"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>BJP</td>
+                    <td>Radha Rani</td>
+                    <td>9876543210</td>
+                    <td><img src="{{ url_for('static', filename='ward_member3.jpg') }}" alt="Member Photo" class="photo"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

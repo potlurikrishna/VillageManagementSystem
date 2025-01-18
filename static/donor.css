@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    border: 1px solid #ccc;
+    margin: 0 auto; /* Centers the form horizontally */
+    margin-top: 20px; /* Adds space below the navbar */
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.message {
+    margin-bottom: 40px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    text-align: center;
+    border: 1px solid #c3e6cb;
+}
+
+.form-container input, .form-container textarea, .form-container button {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-container button:hover {
+    background-color: #218838;
+}
+
+.qr-code-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.redirect-link {
+    margin-top: 15px;
+    display: block;
+}
+
+/* Center the form vertically below the navbar */
+body > .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Adjust for the height of the navbar */
+    margin-top: 0;
+}

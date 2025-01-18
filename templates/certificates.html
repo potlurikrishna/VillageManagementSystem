@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification Section</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='certificates.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Certification Section</h1>
+    <div class="grid-container">
+        <div class="certificate-card" onclick="toggleDetails(this)">
+            <h3>Income Certificate</h3>
+            <div class="certificate-details">
+                <p>An Income Certificate is proof of your annual income from all sources. It is typically used to avail benefits from government schemes.</p>
+                <p><strong>Document List (NOTE: All Upload Documents are in Pdf Format Only)</strong><br>
+                     <ol>
+                        <li>MeeSeva Application Form *</li>
+                        <li>Ration card /EPIC Card/Aadhar Card</li>
+                        <li>Copy of IT Returns/Pay Slips(Any other documents)</li>
+                    </ol>
+                </p>
+                <a href="{{url_for('income_cert')}}" class="apply-button">Apply Now</a>
+                <a href="#" class="apply-button">Download</a>
+            </div>
+        </div>
+        <div class="certificate-card" onclick="toggleDetails(this)">
+            <h3>Caste Certificate</h3>
+            <div class="certificate-details">
+                <p>The Caste Certificate is issued to certify a person’s belonging to a specific caste. It is required for availing reservation benefits.</p>
+                <p><strong>Document List (NOTE: All Upload Documents are in Pdf Format Only)</strong>
+                    <ol>
+                        <li> MeeSeva Application Form</li> 
+                        <li>Caste Certificate issued to the family members</li>
+                        <li>SSC marks memo or DOB extract or Transfer certificate</li>
+                        <li>1 TO 10th study certificates or DOB certificates issued by Municipality/Gram
+                            Panchayath </li> 
+                        <li>Ration Card/EPIC Card /AADHAR CARD</li>
+                        <li>Schedule I to IV</li> 
+                    </ol>
+                </p>
+                <a href="{{url_for('casteApp')}}" class="apply-button">Apply Now</a>
+                <a href="#" class="apply-button">Download</a>
+            </div>
+        </div>
+        <div class="certificate-card" onclick="toggleDetails(this)">
+            <h3>EWS Certificate</h3>
+            <div class="certificate-details">
+                <p>The Economically Weaker Section (EWS) Certificate is provided to individuals belonging to the economically weaker section of society.</p>
+                <a href="#" class="apply-button">Apply Now</a>
+                <a href="#" class="apply-button">Download</a>
+            </div>
+        </div>
+        <div class="certificate-card" onclick="toggleDetails(this)">
+            <h3>PWD Certificate</h3>
+            <div class="certificate-details">
+                <p>The Persons with Disability (PWD) Certificate is issued to individuals with disabilities, enabling them to access government benefits.</p>
+                <a href="#" class="apply-button">Apply Now</a>
+                <a href="#" class="apply-button">Download</a>
+            </div>
+        </div>
+        <div class="certificate-card" onclick="toggleDetails(this)">
+            <h3>Domicile Certificate</h3>
+            <div class="certificate-details">
+                <p>The Domicile Certificate certifies that an individual is a resident of a particular state/union territory in India.</p>
+                <a href="#" class="apply-button">Apply Now</a>
+                <a href="#" class="apply-button">Download</a>
+            </div>
+        </div>
+        <div class="certificate-card" onclick="toggleDetails(this)">
+            <h3>Birth Certificate</h3>
+            <div class="certificate-details">
+                <p>The Birth Certificate is an official document that records a person's birth and is necessary for various legal and identification purposes.</p>
+                <a href="#" class="apply-button">Apply Now</a>
+                <a href="#" class="apply-button">Download</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(card) {
+            card.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

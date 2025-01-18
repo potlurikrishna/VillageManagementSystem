@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <!-- Complaints Section -->
+        <section>
+            <h2>Complaints</h2>
+            {% if complaints %}
+                <table class="complaints-table">
+                    <thead>
+                        <tr>
+                            <th>Complaint ID</th>
+                            <th>Resident Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for complaint in complaints %}
+                            <tr>
+                                <td>{{ complaint._id }}</td>
+                                <td>{{ complaint.name }}</td>
+                                <td>{{ complaint.complaint }}</td>
+                                <td>
+                                    <select onchange="updateStatus('{{ complaint._id }}', this.value, 'complaints')">
+                                        <option value="Pending" {% if complaint.status == 'Pending' %} selected {% endif %}>Pending</option>
+                                        <option value="Solved" {% if complaint.status == 'Solved' %} selected {% endif %}>Solved</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No complaints to display.</p>
+            {% endif %}
+        </section>        
+        
+        <!-- Income Certificate Applications Section -->
+        <section>
+            <h2>Income Certificate Applications</h2>
+            {% if income_certificate %}
+                <table class="two-column-table">
+                    <thead>
+                        <tr>
+                            <th>Application ID</th>
+                            <th>Resident Name</th>
+                            <th>Aadhar Card No</th>
+                            <th>Relation</th>
+                            <th>Gender</th>
+                            <th>Date Of Birth</th>
+                            <th>Permanent Address</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Income On Lands</th>
+                            <th>Income On Business</th>
+                            <th>Total Income</th>
+                            <th>Inter</th>
+                            <th>Aadhar</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for app in income_certificate %}
+                            <tr class="two-column-row">
+                                <td>{{ app._id }}</td>
+                                <td>{{ app.StudentName }}</td>
+                                <td>{{ app.AadharCardNo }}</td>
+                                <td>{{ app.Relation}}</td>
+                                <td>{{ app.Gender}}</td>
+                                <td>{{ app.DateofBirth}}</td>
+                                <td>{{ app.PermanentAddress}}</td>
+                                <td>{{ app.Mobile}}</td>
+                                <td>{{ app.Email}}</td>
+                                <td>{{ app.IncomeonLands}}</td>
+                                <td>{{ app.IncomeonBusiness}}</td>
+                                <td>{{ app.TotalIncome}}</td>
+                                <td>{{ app.MeeSevaApplicationFormPath}}</td>
+                                <td>{{ app.AadharDocumentPath}}</td>
+                                <td>
+                                    <select onchange="updateStatus('{{ app._id }}', this.value, 'income_certificate')">
+                                        <option value="Pending" {% if app.status == 'Pending' %} selected {% endif %}>Pending</option>
+                                        <option value="Solved" {% if app.status == 'Solved' %} selected {% endif %}>Solved</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No income certificate applications to display.</p>
+            {% endif %}
+        </section>
+
+        <!-- Caste Certificate Applications Section -->
+        <section>
+            <h2>Caste Certificate Applications</h2>
+            {% if casteApp %}
+                <table class="two-column-table">
+                    <thead>
+                        <tr>
+                            <th>Application ID</th>
+                            <th>Resident Name</th>
+                            <th>Aadhar Card No</th>
+                            <th>Relation</th>
+                            <th>Gender</th>
+                            <th>Date Of Birth</th>
+                            <th>Permanent Address</th>
+                            <th>Mobile</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Ration Card No</th>
+                            <th>Documents</th>
+                            <th>Caste Certificate Details</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for app in casteApp %}
+                            <tr class="two-column-table">
+                                <td>{{ app._id }}</td>
+                                <td>{{ app.ApplicantName }}</td>
+                                <td>{{ app.AadharCardNo }}</td>
+                                <td>{{ app.Relation }}</td>
+                                <td>{{ app.Gender }}</td>
+                                <td>{{ app.DateofBirth }}</td>
+                                <td>{{ app.PermanentAddress }}</td>
+                                <td>{{ app.Mobile }}</td>
+                                <td>{{ app.Phone }}</td>
+                                <td>{{ app.Email }}</td>
+                                <td>{{ app.RationCardNo }}</td>
+                                <td>{{ app.Documents }}</td>
+                                <td>{{ app.CasteCertificateDetails }}</td>
+                                <td>
+                                    <select onchange="updateStatus('{{ app._id }}', this.value, 'casteApp')">
+                                        <option value="Pending" {% if app.status == 'Pending' %} selected {% endif %}>Pending</option>
+                                        <option value="Solved" {% if app.status == 'Solved' %} selected {% endif %}>Solved</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No caste certificate applications to display.</p>
+            {% endif %}
+        </section>
+    </div>
+
+    <script>
+    // Function to send a status update to the server
+    function updateStatus(id, newStatus, collection) {
+        fetch('/update_status', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: id,
+                status: newStatus,
+                collection: collection
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            if (data.status === 'success') {
+                location.reload(); // Reload the page to show updated data
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+</body>
+</html>

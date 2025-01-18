@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Newspapers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='newspapers.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content">
+        <h1>Popular Newspapers</h1>
+        <div class="newspaper-grid">
+            <div>
+                <h2>Telugu Newspapers</h2>
+                {% for newspaper in newspapers['Telugu'] %}
+                    <div class="section newspaper-link">
+                        <h3><a href="{{ newspaper.url }}" target="_blank">{{ newspaper.name }}</a></h3>
+                        <p>{{ newspaper.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div>
+                <h2>English Newspapers</h2>
+                {% for newspaper in newspapers['English'] %}
+                    <div class="section newspaper-link">
+                        <h3><a href="{{ newspaper.url }}" target="_blank">{{ newspaper.name }}</a></h3>
+                        <p>{{ newspaper.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

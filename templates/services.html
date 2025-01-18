@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %} <!-- Include Navbar -->
+
+    <div class="services-container">
+        <h1>Village Services</h1>
+        <p>Our village administration offers a variety of essential services to all residents. Below is a list of services available to you:</p>
+
+        <div class="service">
+            <h2>Healthcare Services</h2>
+            <p>We offer basic healthcare services including regular medical check-ups, vaccinations, emergency care, and health awareness programs to ensure the well-being of all residents.</p>
+        </div>
+
+        <div class="service">
+            <h2>Education Assistance</h2>
+            <p>Our education program provides financial assistance, school supplies, scholarships, and support for students pursuing higher education, ensuring that every child has access to quality education.</p>
+        </div>
+
+        <div class="service">
+            <h2>Agriculture Support</h2>
+            <p>The village provides agricultural support by offering subsidized seeds, fertilizers, and guidance on crop management, helping farmers to increase yield and improve productivity.</p>
+        </div>
+
+        <div class="service">
+            <h2>Water Supply</h2>
+            <p>We ensure that clean drinking water is available to all residents. Regular maintenance of water resources and pipes ensures a constant, reliable supply of water throughout the village.</p>
+        </div>
+
+        <div class="service">
+            <h2>Social Welfare</h2>
+            <p>Our social welfare services are aimed at supporting underprivileged families with financial aid, food distribution, and other basic necessities to help them lead a better life.</p>
+        </div>
+
+        <div class="service">
+            <h2>Housing Assistance</h2>
+            <p>The village administration provides affordable housing options for families in need. Subsidized housing programs help ensure that every resident has access to safe and secure shelter.</p>
+        </div>
+
+        <div class="service">
+            <h2>Roads and Infrastructure</h2>
+            <p>We maintain and improve village roads, ensuring safe transportation for residents. Regular repairs and upgrades to infrastructure, including drainage systems, are carried out to ensure the village's smooth operation.</p>
+        </div>
+
+        <div class="service">
+            <h2>Electricity and Power Supply</h2>
+            <p>The village administration works to provide uninterrupted power supply and ensures proper maintenance of the electrical grid, offering electricity to homes, street lights, and other public services.</p>
+        </div>
+
+        <div class="service">
+            <h2>Waste Management</h2>
+            <p>Our waste management program ensures proper collection and disposal of waste, promoting cleanliness and hygiene in the village. We also encourage recycling and waste segregation practices.</p>
+        </div>
+
+    </div>
+</body>
+</html>

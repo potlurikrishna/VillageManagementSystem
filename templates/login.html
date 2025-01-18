@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='loginstyle.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <div id="flash-messages" class="flash-messages"></div> <!-- Flash message container -->
+
+        <!-- Login Form -->
+        <form id="login-form" method="post">
+            <label for="username">Username or Mobile Number:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <label for="role">Select Role:</label>
+            <select id="role" name="role" id="role" required>
+                <option value="Resident">Resident</option>
+                <option value="Administrator">Administrator</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <a href="{{ url_for('signup') }}">Signup</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var loginForm = document.getElementById('login-form');
+            var flashMessages = document.getElementById('flash-messages');
+
+            // Handle form submission via AJAX
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();  // Prevent the default form submission
+                
+                var formData = new FormData(loginForm);  // Collect form data
+                
+                // Send the AJAX request to the server
+                fetch('{{ url_for("login") }}', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())  // Parse JSON response
+                .then(data => {
+                    // Clear any previous messages
+                    flashMessages.innerHTML = '';
+                    
+                    // Create a new flash message div
+                    var flashDiv = document.createElement('div');
+                    flashDiv.className = 'flash ' + (data.status === 'success' ? 'success' : 'danger');
+                    flashDiv.innerHTML = '<b><center>' + data.message + '</center></b>';
+                    flashMessages.appendChild(flashDiv);
+
+                    // Set a timeout to hide the flash message after 3 seconds
+                    setTimeout(function() {
+                        flashDiv.style.opacity = '0';  // Fade out the message
+                        setTimeout(function() {
+                            flashDiv.remove();  // Remove the message from the DOM
+                        }, 500);  // Wait for the fade-out transition (0.5s)
+                    }, 3000);  // Show for 3 seconds
+
+                    // If login is successful, redirect after 3 seconds
+                    if (data.status === 'success') {
+                        setTimeout(function() {
+                            window.location.href = data.redirect_url;  // Redirect to dashboard
+                        }, 1000);  // Redirect after the message disappears
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);  // Log any errors
+                });
+            });
+        });
+    </script>
+</body>
+</html>

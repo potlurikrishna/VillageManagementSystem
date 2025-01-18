@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 {
+    color: #007bff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.newspaper-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+    gap: 20px; /* Adds spacing between the columns */
+}
+
+.section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    margin-bottom: 15px; /* Adjusts spacing between newspaper items */
+}
+
+.section h3 {
+    margin: 0 0 10px 0;
+}
+
+.section a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+}
+
+.section a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.section p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}

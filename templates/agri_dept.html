@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Department</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='agri_dept.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>Agriculture Department Overview</h1>
+        
+        <div class="section">
+            <h2>Crop Details of Previous Year</h2>
+            <div class="crop-gallery">
+                <div class="crop-item">
+                    <img src="{{ url_for('static', filename='ricecrop.jpg') }}" alt="Rice Crop">
+                    <p>Rice</p>
+                </div>
+                <div class="crop-item">
+                    <img src="{{ url_for('static', filename='blackgram.jpg') }}" alt="Blackgram Crop">
+                    <p>Blackgram</p>
+                </div>
+                <div class="crop-item">
+                    <img src="{{ url_for('static', filename='greengram.jpg') }}" alt="Greengram Crop">
+                    <p>Greengram</p>
+                </div>
+                <div class="crop-item">
+                    <img src="{{ url_for('static', filename='sugarcane.jpg') }}" alt="Sugarcane Crop">
+                    <p>Sugarcane</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Crop Cultivation Comparison (Previous Year vs Current Year)</h2>
+            <canvas id="cropComparisonChart" width="400" height="200"></canvas>
+        </div>
+
+        <div class="section">
+            <h2>Availability of Fertilizers in Co-operative Bank</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fertilizer</th>
+                        <th>Available Quantity (kg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Urea</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <td>Di-Ammonium Phosphate (DAP)</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>Potash</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>Complex Fertilizers (NPK)</td>
+                        <td>400</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Loan Availability for Farmers in Co-operative Bank</h2>
+            <h4> These loans are preferred by most of the Farmers</h4>
+            <div class="loan-progress">
+                <div class="loan">
+                    <p>Crop Loan</p>
+                    <progress value="80" max="100"></progress>
+                </div>
+                <div class="loan">
+                    <p>Irrigation Loan</p>
+                    <progress value="60" max="100"></progress>
+                </div>
+                <div class="loan">
+                    <p>Equipment Loan</p>
+                    <progress value="50" max="100"></progress>
+                </div>
+                <div class="loan">
+                    <p>Agro-Based Loan</p>
+                    <progress value="30" max="100"></progress>
+                </div>
+            </div>
+        </div>
+        <div>
+        <h2>Contact Details</h2>
+            <P><strong>Contact:</strong> 7842469927</P>
+            <p><strong>E-mail:</strong> agri@gmail.com</p>
+        </div>
+        <div class="section">
+            <h2>Crop Analysis</h2>
+            <p>The main crops cultivated in our village are rice, blackgram, greengram, and sugarcane. Based on soil quality and water availability, these crops have shown high yields. It is advised to consult the agriculture department for more guidance on crop rotation and best practices.</p>
+        </div>
+    </div>
+
+    <script>
+        // Chart.js script to create a bar chart
+        const ctx = document.getElementById('cropComparisonChart').getContext('2d');
+        const cropComparisonChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Rice', 'Blackgram', 'Greengram', 'Sugarcane'],
+                datasets: [
+                    {
+                        label: 'Previous Year (in tons)',
+                        data: [30, 20, 15, 40], // Example data for the previous year
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Current Year (in tons)',
+                        data: [35, 25, 18, 50], // Example data for the current year
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Quantity (in tons)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Crop Type'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Comparison of Crop Cultivation (Previous Year vs Current Year)'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

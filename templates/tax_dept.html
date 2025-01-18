@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village Tax Department</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tax_dept.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>Tax Department</h1>
+        
+        <div class="tax-info">
+            <h2>Property Tax</h2>
+            <p><strong>Description:</strong> Tax levied on properties based on their valuation.</p>
+            <p><strong>Last Date for Payment:</strong> 31st March of every financial year</p>
+            <p><strong>Late Fee:</strong> 2% of the outstanding amount per month</p>
+        </div>
+
+        <div class="tax-info">
+            <h2>Water Tax</h2>
+            <p><strong>Description:</strong> Charges for the water supply provided by the village.</p>
+            <p><strong>Last Date for Payment:</strong> 30th June every year</p>
+            <p><strong>Late Fee:</strong> 1% of the outstanding amount per month</p>
+        </div>
+
+        <div class="tax-info">
+            <h2>House Tax</h2>
+            <p><strong>Description:</strong> Annual tax levied on houses based on the area and usage.</p>
+            <p><strong>Last Date for Payment:</strong> 31st December every year</p>
+            <p><strong>Late Fee:</strong> 3% of the outstanding amount per month</p>
+        </div>
+
+        <div class="contact-details">
+            <h2>Contact Tax Department</h2>
+            <p><strong>Address:</strong> Village Office, Main Street, Zamigolvepalli</p>
+            <p><strong>Phone:</strong> 123-456-7890</p>
+            <p><strong>Email:</strong> taxdepartment@zamigolvepalli.gov</p>
+        </div>
+    </div>
+</body>
+</html>

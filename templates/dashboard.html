@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Village Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    <div class="content">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div> {% include 'navbar.html' %} </div>
+        <div class="marquee-container">
+            <marquee><b>Village Name</b>: Zamigolvepalli | <b>Pincode:</b> 521322 | <b>Mandal:</b> Pamarru | <b>District:</b> Krishna | <b>State:</b> Andhra Pradesh</marquee>
+        </div>
+        <h1>Zamigolvepalli</h1>
+        <div class="container">
+            <div class="section scheme">
+                <h2> Govt Schemes</h2>
+                <p>Details about government schemes...</p>
+            </div>
+            <div class="section development">
+                <h2> <a href="{{ url_for('development_activities')}}">Development Activities in the Village</a></h2>
+                <p>Information about development activities...</p>
+            </div>
+            <div class="section certificates">
+                <h2> <a href="{{ url_for('certificates')}}">Certificates</a></h2>
+                <p>Details about certificates...</p>
+            </div>
+            <div class="section newspapers">
+                <h2><a href="{{ url_for('show_newspapers') }}"> Newspapers</a></h2>
+                <p>Latest news and updates...</p>
+            </div>
+            <div class="section agriculture">
+                <h2><a href="{{ url_for('agri_dept') }}"> Agriculture Department</a></h2>
+                <p>Information about agriculture...</p>
+            </div>
+            <div class="section donors">
+                <h2><a href="{{ url_for('display')}}"> Donors for Village</a></h2>
+                <p>Details about donors...</p>
+            </div>
+            <div class="section sarpanch">
+                <h2><a href="{{ url_for('Sarpanch') }}"> Sarpanch</a></h2>
+                <p>Information about the Sarpanch...</p>
+            </div>
+            <div class="section mptc">
+                <h2><a href="{{ url_for('MPTC')}}"> MPTC</a></h2>
+                <p>Information about MPTC...</p>
+            </div>
+            <div class="section ward-members">
+                <h2><a href="{{ url_for('wardmember')}}"> Ward Members</a></h2>
+                <p>Details about ward members...</p>
+            </div>
+            <div class="section schools-hospitals">
+                <h2><a href="{{ url_for('availability')}}"> Availability of Schools and Hospitals and PHC in the Village</a></h2>
+                <p>Details about schools, hospitals, and PHC...</p>
+            </div>
+            <div class="section water-department">
+                <h2><a href="{{url_for('water_dept')}}"> Water Department</a></h2>
+                <p>Information about the water department...</p>
+            </div>
+            <div class="section electric-department">
+                <h2><a href="{{url_for('electricity')}}"> Electric Department</a></h2>
+                <p>Information about the electric department...</p>
+            </div>
+            <div class="section tax-department">
+                <h2><a href="{{url_for('tax_dept')}}"> Tax Department</a></h2>
+                <p>Details about the tax department...</p>
+            </div>
+            <div class="section population">
+                <h2><a href="{{url_for('population')}}"> Population of Village</a></h2>
+                <p>Information about the population...</p>
+            </div>
+            <div class="section complaints">
+                <h2><a href="{{url_for('complaints')}}"> Complaints</a></h2>
+                <p>Complaint submission and tracking...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

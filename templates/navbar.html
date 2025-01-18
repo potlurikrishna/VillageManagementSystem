@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="logo">Village Management</div>
+    <ul class="nav-links">
+        <li><a href="/h1">Home</a></li>  <!-- Always goes to '/home' -->
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+    </ul>
+    <div class="profile-dropdown">
+        <img src="{{ url_for('static', filename='profile.png') }}" alt="Profile" class="profile-icon">
+        <div class="dropdown-menu">
+            <a href="/profile">My Profile</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sarpanch Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sarpanch.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content">
+        <h1>Sarpanch Details</h1>
+        <div class="sarpanch-info">
+            <div class="text-info">
+                <h2>Name: Potluri Krishna Balamohan</h2>
+                <p><strong>Contact Number:</strong> 7842469927 </p>
+                <p><strong>Email:</strong> potluribala2003@gmail.com </p>
+                <p><strong>Address:</strong> Zamigolvepalli, Pamarru mandal</p>
+                <p><strong>Tenure:</strong> 2022-2027</p>
+                <p><strong>Elected Party:</strong> Independent </p>
+            </div>
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='my_image.png') }}" alt="Sarpanch Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

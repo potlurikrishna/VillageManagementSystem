@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Department in the Village</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='electricity.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+</body>
+<body>
+    <h1>Electric Department in the Village</h1>
+    <div class="content">
+        <div class="services">
+            <h2>Services Offered</h2>
+            <ul>
+                <li>New Connections</li>
+                <li>Fault Reporting</li>
+                <li>Meter Installation</li>
+                <li>Service Maintenance</li>
+                <li>Power Supply Issues</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Office Address:</strong> Main Road, Zamigolvepalli</p>
+            <p><strong>Phone Number:</strong> 123-456-7890</p>
+            <p><strong>Email:</strong> electricdept@village.com</p>
+        </div>
+
+        <div class="emergency">
+            <h2>Emergency Contacts</h2>
+            <p><strong>24/7 Helpline:</strong> 987-654-3210</p>
+            <p><strong>Power Failure Reporting:</strong> 456-789-1234</p>
+        </div>
+    </div>
+</body>
+</html>

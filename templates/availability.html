@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability of Schools and Hospitals in the Village</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='availability.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Availability of Schools, Hospitals, and PHC in the Village</h1>
+    <div class="container">
+        <div class="card">
+            <img src="{{ url_for('static', filename='zphs scool.jpg') }}" alt="Govt High School">
+            <h2>K.V.S.M ZPH School</h2>
+            <p><strong>Address:</strong> Pamarru Road, Zamigolvepalli</p>
+            <p><strong>Contact Number:</strong> 1234567890</p>
+            <p><a href="https://www.google.com/maps/place/KVSM+ZPPH+School/@16.3661572,80.9594711,697m/data=!3m1!1e3!4m6!3m5!1s0x3a3602eb7dd15997:0xa2725c961c3f3c5a!8m2!3d16.3663857!4d80.9595799!16s%2Fg%2F11xs0c2lr?authuser=0&entry=ttu&g_ep=EgoyMDI0MTAyMS4xIKXMDSoASAFQAw%3D%3D" target="_blank">View Location</a></p>
+        </div>
+        
+        <div class="card">
+            <img src="{{ url_for('static', filename='Primaryschool.jpeg') }}" alt="ABC Primary School">
+            <h2>Mandala Parishad Primary School</h2>
+            <p><strong>Address:</strong> Near WaterTank, Zamigolvepalli</p>
+            <p><strong>Contact Number:</strong> 0987654321</p>
+            <p><a href="https://www.google.com/maps/search/Mpps+Zamigolvepalle+Primary+School,+Krishna+Pamarru+Zphs,+Addada+Zamigolvepalle++Andhra+Pradesh+511322+India/@16.3485129,80.9602488,6759m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI0MTAyMS4xIKXMDSoASAFQAw%3D%3D" target="_blank">View Location</a></p>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='hospital.jpg') }}" alt="XYZ Community Hospital">
+            <h2>Hospital</h2>
+            <p><strong>Address:</strong> Near VaddaCheruvu, Zamigolvepalli</p>
+            <p><strong>Contact Number:</strong> 1122334455</p>
+            <p><a href="https://www.google.com/maps/place/ZGP+New+PHC/@16.37116,80.9564522,461m/data=!3m1!1e3!4m15!1m8!3m7!1s0x3a360244f74c9597:0x5ecc913400dbbfb7!2sElamarru+-+Dosapadu+Rd,+Andhra+Pradesh!3b1!8m2!3d16.4186704!4d80.9276064!16s%2Fg%2F11h3mt__cz!3m5!1s0x3a3602eed0ffc7a7:0x529d8efbdc06547!8m2!3d16.3719628!4d80.958952!16s%2Fg%2F1ydpvbn52?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" target="_blank">View Location</a></p>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='phc.jpeg') }}" alt="Village Health Centre">
+            <h2>Village Health Centre (PHC)</h2>
+            <p><strong>Address:</strong> Near WaterPlant, Zamigolvepalli</p>
+            <p><strong>Contact Number:</strong> 5566778899</p>
+            <p><a href="https://www.google.com/maps?q=Near+WaterPlant,+Zamigolvepalli" target="_blank">View Location</a></p>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='veterinary.jpeg') }}" alt="Veterinary Hospital">
+            <h2>Veterinary Hospital</h2>
+            <p><strong>Address:</strong> Yalamarru Road, Zamigolvepalli</p>
+            <p><strong>Contact Number:</strong> 1231231234</p>
+            <p><a href="https://www.google.com/maps?q=Yalamarru+Road,+Zamigolvepalli" target="_blank">View Location</a></p>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='anganwadi.jpeg') }}" alt="Anganwadi">
+            <h2>Anganwadi</h2>
+            <p><strong>Address:</strong> Near VaddaCheruvu, Zamigolvepalli</p>
+            <p><strong>Contact Number:</strong> 9876543210</p>
+            <p><a href="https://www.google.com/maps?q=Near+VaddaCheruvu,+Zamigolvepalli" target="_blank">View Location</a></p>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='wedding hall.jpg') }}" alt="Wedding Hall">
+            <h2>NSR Anjaneya Chowdary Wedding Hall</h2>
+            <p><strong>Address:</strong> Near Old Temple, Zamigolvepalli</p>
+            <p><strong>Contact:</strong> 2233445566</p>
+            <p><a href="https://www.google.com/maps/dir//9X97%2B838+NSR+Anjaneya+Chowdary+Kalyana+Mandapam,+Zamigolvepalli+-+Tattivarru+Rd,+Zamigolvepalli,+Andhra+Pradesh+521322/@16.3684581,80.958478,845m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3a3602ea49fdf87d:0xb46cac60a905a06e!2m2!1d80.9625529!2d16.3683063?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" target="_blank">View Location</a></p>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='unionbank.jpg') }}" alt="Union Bank">
+            <h2>Union Bank</h2>
+            <p><strong>Address:</strong> Main Road, Zamigolvepalli</p>
+            <p><strong>Contact:</strong> 3344556677</p>
+            <p><a href="https://www.google.com/maps?q=Main+Road,+Zamigolvepalli" target="_blank">View Location</a></p>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='milkcenter.jpg') }}" alt="Milk Centre">
+            <h2>Milk Centre</h2>
+            <p><strong>Address:</strong> Main Road, Zamigolvepalli</p>
+            <p><strong>Contact:</strong> 4455667788</p>
+            <p><a href="https://www.google.com/maps?q=Main+Road,+Zamigolvepalli" target="_blank">View Location</a></p>
+        </div>
+    </div>
+</body>
+</html>

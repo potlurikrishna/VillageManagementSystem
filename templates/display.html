@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='display.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+</body>
+<body class="b">
+    <h1>Donor Dashboard</h1>
+    
+    <!-- Links for navigating -->
+    <div class="dashboard-links">
+        <a href="/donation_form">Donate Now</a>
+        <a href="/donation_detail">View Donation Details</a>
+    </div>
+</body>
+</html>

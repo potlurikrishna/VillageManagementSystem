@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Certificate Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='castApp.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="form-container">
+        <h2>Integrated Certificate Application Form</h2>
+        <form action="/submit_integrated_cert_application" method="POST" enctype="multipart/form-data">
+            <!-- Applicant Details -->
+            <div class="form-group">
+                <label for="aadhar">Aadhar Card No*</label>
+                <input type="text" id="aadhar" name="aadhar" required>
+            </div>
+            <div class="form-group">
+                <label for="applicant_name">Applicant Name*</label>
+                <input type="text" id="applicant_name" name="applicant_name" required>
+            </div>
+            <div class="form-group">
+                <label for="relation">Relation*</label>
+                <input type="text" id="relation" name="relation" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender*</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth*</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <!-- Permanent Address -->
+            <div class="form-group">
+                <label>Permanent Address</label>
+                <input type="text" name="permanent_door_no" placeholder="Door No" class="address-input" required>
+                <input type="text" name="permanent_locality" placeholder="Locality/Land Mark" class="address-input" required>
+                <input type="text" name="permanent_district" placeholder="District" class="address-input" required>
+                <input type="text" name="permanent_mandal" placeholder="Mandal" class="address-input" required>
+                <input type="text" name="permanent_village" placeholder="Village" class="address-input" required>
+                <input type="text" name="permanent_secretariat" placeholder="Secretariat" class="address-input">
+                <input type="text" name="permanent_pin_code" placeholder="Pin Code" class="address-input" required>
+            </div>
+
+            <!-- Postal Details -->
+            <div class="form-group">
+                <label>Postal Details</label>
+                <input type="text" name="postal_door_no" placeholder="Door No" class="address-input" required>
+                <input type="text" name="postal_locality" placeholder="Locality/Land Mark" class="address-input" required>
+                <input type="text" name="postal_state" placeholder="State" class="address-input" required>
+                <input type="text" name="postal_district" placeholder="District" class="address-input" required>
+                <input type="text" name="postal_mandal" placeholder="Mandal" class="address-input" required>
+                <input type="text" name="postal_village" placeholder="Village" class="address-input" required>
+                <input type="text" name="postal_pin_code" placeholder="Pin Code" class="address-input" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile*</label>
+                <input type="text" id="mobile" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="remarks">Remarks</label>
+                <textarea id="remarks" name="remarks" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="ration_card_no">Ration Card No</label>
+                <input type="text" id="ration_card_no" name="ration_card_no">
+            </div>
+            <div class="form-group">
+                <label>Delivery Type*</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="radio" id="manual" name="delivery_type" value="Manual" required>Manual
+                    </label>
+                    <label>
+                        <input type="radio" id="local_post" name="delivery_type" value="Local post" required>Local Post
+                    </label>
+                </div>
+            </div>
+
+            <!-- Caste Certificate Details -->
+            <div class="form-group">
+                <label>Issued Caste Certificate in Past*</label>
+                <div class="checkbox-group">
+                    <label><input type="radio" id="issued_yes" name="issued_caste_certificate" value="Yes" required>Yes</label>
+                    <label><input type="radio" id="issued_no" name="issued_caste_certificate" value="No" required>No</label>             </div>
+            </div>
+            <div class="form-group">
+                <label for="caste_claimed">Caste Claimed</label>
+                <input type="text" id="caste_claimed" name="caste_claimed">
+            </div>
+            <div class="form-group">
+                <label for="caste_category">Caste Category</label>
+                <input type="text" id="caste_category" name="caste_category">
+            </div>
+            <div class="form-group">
+                <label>Educational Certificate Contains Caste*</label>
+                <div class="checkbox-group">
+                    <label><input type="radio" id="edu_yes" name="edu_contains_caste" value="Yes" required>Yes</label>
+                    <label><input type="radio" id="edu_no" name="edu_contains_caste" value="No" required>No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="purpose_of_caste_certificate">Purpose of Caste Certificate</label>
+                <input type="text" id="purpose_of_caste_certificate" name="purpose_of_caste_certificate">
+            </div>
+            <div class="form-group">
+                <label for="religion">Religion</label>
+                <input type="text" id="religion" name="religion">
+            </div>
+
+            <!-- Document Uploads -->
+            <div class="form-group">
+                <label for="meeseva_application_form">MeeSeva Application Form (PDF Only)*</label>
+                <input type="file" id="meeseva_application_form" name="meeseva_application_form" accept="application/pdf" required>
+            </div>
+            <div class="form-group">
+                <label for="caste_certificate">Caste Certificate Issued to Family Members (PDF Only)</label>
+                <input type="file" id="caste_certificate" name="caste_certificate" accept="application/pdf">
+            </div>
+            <div class="form-group">
+                <label for="ssc_marks_memo">SSC Marks Memo or DOB Extract or Transfer Certificate (PDF Only)</label>
+                <input type="file" id="ssc_marks_memo" name="ssc_marks_memo" accept="application/pdf">
+            </div>
+            <div class="form-group">
+                <label for="study_certificates">1 to 10th Study Certificates or DOB Certificates (PDF Only)</label>
+                <input type="file" id="study_certificates" name="study_certificates" accept="application/pdf">
+            </div>
+            <div class="form-group">
+                <label for="ration_card">Ration Card/EPIC Card / AADHAR CARD (PDF Only)</label>
+                <input type="file" id="ration_card" name="ration_card" accept="application/pdf">
+            </div>
+            <div class="form-group">
+                <label for="schedule">Schedule I to IV (PDF Only)</label>
+                <input type="file" id="schedule" name="schedule" accept="application/pdf">
+            </div>
+
+            <button type="submit" class="submit-button">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

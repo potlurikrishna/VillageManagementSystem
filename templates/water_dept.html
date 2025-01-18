@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Department</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='water_dept.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Water Department</h1>
+    <div class="content">
+        <h2>About Us</h2>
+        <p>The Water Department is responsible for providing safe and clean drinking water to the residents of our village.</p>
+        <p>We are committed to ensuring that all households have access to adequate water supply and sanitation services.</p>
+
+        <div class="services">
+            <h2>Services Offered</h2>
+            <ul>
+                <li>Regular water supply management</li>
+                <li>Maintenance of water pipelines</li>
+                <li>Water quality testing and assurance</li>
+                <li>Leakage repairs and issue resolution</li>
+                <li>Public awareness campaigns about water conservation</li>
+            </ul>
+        </div>
+
+        <div class="timings">
+            <h2>Water Supply Timings</h2>
+            <p>Water supply is available to residents as per the following schedule:</p>
+            <ul>
+                <li>Monday to Friday: 6 AM - 10 AM & 5 PM - 8 PM</li>
+                <li>Saturday: 7 AM - 11 AM</li>
+                <li>Sunday: No supply</li>
+            </ul>
+            <p>Please ensure to store sufficient water during supply hours.</p>
+        </div>
+
+        <div class="cleaning-schedule">
+            <h2>Water Tank Cleaning Schedule</h2>
+            <p>The following dates are important for the cleaning of the water tank:</p>
+            <ul>
+                <li><strong>Last Cleaning:</strong> 15th August 2024</li>
+                <li><strong>Next Scheduled Cleaning:</strong> 15th November 2024</li>
+            </ul>
+            <p>Cleaning is done quarterly to ensure the quality of water supplied to residents.</p>
+        </div>
+
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p><strong>Office Address:</strong> Village Water Department, Zamigolvepalli</p>
+            <p><strong>Phone:</strong> 7842469927</p>
+            <p><strong>Email:</strong> waterdepartment@village.com</p>
+            <p><strong>Office Hours:</strong> Monday to Friday, 9 AM - 5 PM</p>
+        </div>
+    </div>
+</body>
+</html>

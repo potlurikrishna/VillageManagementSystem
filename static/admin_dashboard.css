@@ -1,0 +1,111 @@
+/* General Reset */
+body, h1, h2, p, table, th, td, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #555;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Updated Table Styling for Income Certificate */
+.two-column-table {
+    width: 50%; /* Reduced width for the table */
+    margin: 0 auto; /* Center align the table */
+    border-collapse: collapse;
+    font-size: 9px; /* Reduced font size */
+}
+
+.two-column-table th, .two-column-table td {
+    padding: 6px; /* Reduced padding for compact design */
+    border: 1px solid #ddd;
+}
+
+.two-column-table th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px; /* Slightly reduced font size for headers */
+}
+
+.two-column-table td {
+    text-align: center;
+    word-wrap: break-word; /* Handle long text in cells */
+}
+
+.two-column-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Compact Button Styling for Table Actions */
+.two-column-table button {
+    padding: 4px 8px; /* Smaller button size */
+    font-size: 12px; /* Adjust font size for buttons */
+    margin: 2px; /* Space between buttons */
+}
+
+/* Optional: For Mobile View */
+@media (max-width: 768px) {
+    .two-column-table {
+        font-size: 12px; /* Further reduce font size for mobile */
+    }
+    .two-column-table td, .two-column-table th {
+        padding: 4px; /* Smaller padding on mobile */
+    }
+    .two-column-table button {
+        padding: 3px 6px;
+        font-size: 11px;
+    }
+}
+.complaints-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.complaints-table th, .complaints-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.complaints-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.complaints-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.complaints-table button {
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 2px;
+}

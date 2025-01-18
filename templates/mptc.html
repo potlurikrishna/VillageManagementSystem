@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MPTC Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mptc.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content">
+        <h1>MPTC Details</h1>
+        <div class="mptc-info">
+            <div class="text-info">
+                <h2>Name: Potluri Krishna Balamohan</h2>
+                <p><strong>Contact Number:</strong> 7842469927</p>
+                <p><strong>Email:</strong> potluribala2003@gmail.com</p>
+                <p><strong>Address:</strong> Zamigolvepalli</p>
+                <p><strong>Party:</strong> Independent</p>
+                <p><strong>Tenure:</strong> 2023-2028</p>
+            </div>
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='my_image.png') }}" alt="MPTC Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

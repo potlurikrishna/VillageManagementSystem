@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sarpanch-info {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sarpanch-info h2 {
+    margin: 0 0 10px 0;
+    color: #15100b;
+}
+
+.sarpanch-info p {
+    margin: 10px 0;
+    color: #666;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sarpanch-info {
+    display: flex;
+    justify-content: space-between; /* Align items to the sides */
+    align-items: flex-start; /* Aligns items to the start */
+}
+
+.text-info {
+    flex: 1; /* Allow this to take up remaining space */
+    padding-right: 20px; /* Space between text and image */
+}
+
+.image-container img {
+    max-width: 200px; /* Set maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+}
