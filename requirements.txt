@@ -5,3 +5,4 @@ pymongo==4.3.3
 itsdangerous==2.1.2
 Werkzeug==2.2.3
 gunicorn
+app.config["MONGO_URI"]= mongodb+srv://potluribala2003:<1SmN4INHEQLnQZth>@cluster0.8p52v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
